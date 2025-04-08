@@ -16,7 +16,7 @@ const (
 // Watcher is an interface that is used to manage the lifecycle of a transaction.
 // The Allow method is used to determine if a transaction should be sent. The context
 // is passed to the method so that the watcher can determine this based on the context.
-// The Sent method is is used to notify the watcher that the transaction has been sent.
+// The Sent method is used to notify the watcher that the transaction has been sent.
 type Watcher interface {
 	Allow(ctx context.Context, nonce uint64) bool
 	Sent(ctx context.Context, tx *types.Transaction)
