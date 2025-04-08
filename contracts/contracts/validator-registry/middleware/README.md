@@ -132,7 +132,7 @@ Any vault integrating with the mev-commit middleware contract must use a [burner
 
 * `IBurnerRouter.networkReceiver()` must be set to `MevCommitMiddlewareStorage.slashReceiver`.
 * `IBurnerRouter.delay()` must be greater than `MevCommitMiddlewareStorage.minBurnerRouterDelay`, a suggested value for the latter param is `2 days`.
-* `IBurnerRouter.operatorNetworkReceiver()` must be disable by setting to `address(0)`, or set to `MevCommitMiddlewareStorage.slashReceiver`. Essentially this value must not override a valid network receiver.
+* `IBurnerRouter.operatorNetworkReceiver()` must be disabled by setting to `address(0)`, or set to `MevCommitMiddlewareStorage.slashReceiver`. Essentially this value must not override a valid network receiver.
 
 Upon vault registration, and validator registration, these conditions are checked. If later on, these conditions are not met, all validators associated to a vault will no longer be opted-in, as enforced in `_isValidatorOptedIn`.
 
